@@ -54,7 +54,46 @@ def test():
     '''
 
     # ------------------- ndarray -------------------
-    x = np.random.random(0, 10, size=(2, 3))
+
+
+    # zeros 创建指定大小的数组，数组元素以 0 来填充
+    # numpy.zeros(shape, dtype = float, order = 'C')
+    x = np.zeros((2, 3), dtype=float)
+    print(x)
+    '''
+    [[0. 0. 0.]
+    [0. 0. 0.]]
+    '''
+
+
+    # numpy.ones(shape, dtype = None, order = 'C')
+    print(np.ones((5,), dtype=int))  # [1 1 1 1 1]
+
+
+    # numpy.empty(shape, dtype = float, order = 'C')
+    # 方法用来创建一个指定形状（shape）、数据类型（dtype）且未初始化的数组，里面的元素的值是之前内存的值：
+    print(np.empty((2, 3), dtype=float))
+    '''
+    [[0. 0. 0.]
+    [0. 0. 0.]]
+    '''
+
+    # np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
+    # linspace 函数用于创建一个一维数组，数组是一个等差数列构成的
+    # num:要生成的等步长的样本数量
+    # endpoint 该值为 ture 时，数列中中包含 stop 值，反之不包含，默认是 True。
+    # retstep 如果为 True 时，生成的数组中会显示间距，反之不显示。
+    print(np.linspace(5, 10, 5, endpoint=True, retstep=True, dtype=int))  # (array([ 5,  6,  7,  8, 10]), 1.25)
+
+
+    # np.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None)
+    # numpy.logspace 函数用于创建一个于等比数列。
+    # num 要生成的等步长的样本数量
+    # endpoint 该值为 ture 时，数列中中包含 stop 值，反之不包含，默认是 True。
+    # base 对数 log 的底数
+    print(np.logspace(1, 10, 10, endpoint=True, base=3, dtype=int))
+    # [    3     9    27    81   243   729  2187  6561 19683 59049]
+
 
 if __name__ == '__main__':
     test()
