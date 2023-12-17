@@ -27,6 +27,7 @@ while True:
         file_file_path = file_path + filename[1:]
         f = open(file_file_path, 'r', encoding='UTF-8')
         # Fill in start
+
         outputdata = f.read()
         # Fill in end
         # Send one HTTP header line into socket
@@ -45,7 +46,7 @@ while True:
         # Send response message for file not found
         # Fill in start
         response = "404 Not Found"
-        connectionSocket.send(response)
+        connectionSocket.send(response.encode('utf-8'))
         # Fill in end
 
         # Close client socket
